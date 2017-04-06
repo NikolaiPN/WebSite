@@ -1,0 +1,5 @@
+﻿@function rem( $pixels, $base: $rem-Fn-base ){
+    $result: ($pixels / $base) * 1rem;
+
+    @return $result;
+}

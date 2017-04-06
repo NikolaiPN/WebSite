@@ -1,0 +1,19 @@
+﻿@mixin font-size--standart(){
+    font-size: 14px;
+    color: #AAA;
+}
+
+@mixin font-size--title(){
+    font-size: 18px;
+    color: #AAA;
+}
+
+@mixin font-size--big(){
+    font-size: 16px;
+    color: #AAA;
+}
+
+@mixin font-size--bonus(){
+    font-size: 12px;
+    color: #AAA;
+}

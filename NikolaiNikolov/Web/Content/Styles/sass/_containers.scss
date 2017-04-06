@@ -1,0 +1,23 @@
+﻿body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    height: 100vh;
+}
+
+section {
+    @include font-size--standart;
+    align-self: center;
+}
+
+.sect-main {
+    width: rem(500);
+}

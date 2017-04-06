@@ -1,0 +1,69 @@
+.nav-trigger, .nav-trigger-close {
+  position: fixed;
+  right: 1.42857rem;
+  top: 1.42857rem; }
+  .nav-trigger.active, .active.nav-trigger-close {
+    display: none; }
+
+.btn {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border: none;
+  z-index: 10; }
+
+.nav-trigger-close {
+  display: none; }
+  .nav-trigger-close.active {
+    display: block; }
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+main {
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  height: 100vh; }
+
+section {
+  font-size: 14px;
+  color: #AAA;
+  align-self: center; }
+
+.sect-main {
+  width: 35.71429rem; }
+
+.nav {
+  font-size: 16px;
+  color: #AAA;
+  float: right;
+  height: 100vh;
+  background-color: #2B2B2B;
+  box-sizing: border-box;
+  display: none;
+  box-shadow: -2px 0px 3px #191919; }
+  .nav.active {
+    display: flex; }
+  .nav .nav__container {
+    width: 14.28571rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .nav .nav__container ul {
+      width: 100%;
+      padding-left: 0; }
+      .nav .nav__container ul li {
+        list-style: none;
+        font-size: 22px;
+        line-height: 2.5;
+        padding-left: 2.14286rem; }
+        .nav .nav__container ul li:hover {
+          background-color: #252525;
+          cursor: pointer; }
+
+/*# sourceMappingURL=maps/Proccessed.css.map */

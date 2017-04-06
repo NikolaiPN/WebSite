@@ -1,0 +1,1 @@
+{"version":3,"sources":["sass/includes.scss"],"names":[],"mappings":"AAAA","file":"../Proccessed.min.css","sourcesContent":["@import \"buttons\";\r\n@import \"containers\";\r\n@import \"functions\";\r\n@import \"mixins\";\r\n@import \"navigation\";\r\n@import \"variables\";"]}

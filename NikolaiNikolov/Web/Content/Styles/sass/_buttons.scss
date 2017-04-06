@@ -1,0 +1,27 @@
+﻿.nav-trigger {
+    position: fixed;
+    right: rem(20);
+    top: rem(20);
+
+    &.active {
+        display: none;
+    }
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border: none;
+    z-index: 10;
+}
+
+.nav-trigger-close {
+    display: none;
+
+    @extend .nav-trigger;
+
+    &.active{
+        display: block;
+    }
+}

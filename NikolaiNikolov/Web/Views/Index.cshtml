@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Nikolay Nikolov</title>
+    <link href="~/Web/Content/Styles/Proccessed.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+
+    </script>
+</head>
+<body>
+    <button class="btn nav-trigger"></button>
+    <navigation class="nav">
+        <div class="nav__container">
+            <button class="btn nav-trigger-close"></button>
+            <ul>
+                <li>About</li>
+                <li>Skills</li>
+                <li>Projects</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+    </navigation>
+    <main>
+        <section class="sect-main">
+            <p>Hello, my name is Nikolay Nikolov.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+    </main>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+    });
+
+    var navTrigger = $('.nav-trigger');
+    var navTriggerClose = $('.nav-trigger-close');
+    var nav = $('.nav');
+
+    navTrigger.on('click', toggleActive);
+    navTriggerClose.on('click', toggleActive);
+
+    function toggleActive() {
+        navTrigger.toggleClass('active');
+        nav.toggleClass('active');
+        navTriggerClose.toggleClass('active');
+    }
+</script>
