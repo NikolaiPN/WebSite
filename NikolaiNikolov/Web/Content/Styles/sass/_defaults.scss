@@ -1,0 +1,10 @@
+﻿html * {
+    box-sizing: border-box;
+    color: $regular-text--color;
+    font-family: "Open Sans", "Helvetica";
+    font-size: $browser-context;
+}
+
+li:hover, button:hover{
+    cursor: pointer;
+}

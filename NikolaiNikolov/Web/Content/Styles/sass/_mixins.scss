@@ -1,4 +1,4 @@
-﻿@mixin font-size--standart(){
+﻿@mixin font-size--regular{
     font-size: 14px;
     color: #AAA;
 }
@@ -16,4 +16,10 @@
 @mixin font-size--bonus(){
     font-size: 12px;
     color: #AAA;
+}
+
+@mixin floating($level: 1){
+    position: absolute;
+    z-index: $level * 10; 
+
 }

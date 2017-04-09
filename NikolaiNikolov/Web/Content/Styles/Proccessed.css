@@ -1,69 +1,151 @@
 .nav-trigger, .nav-trigger-close {
   position: fixed;
-  right: 1.42857rem;
-  top: 1.42857rem; }
-  .nav-trigger.active, .active.nav-trigger-close {
-    display: none; }
-
-.btn {
-  height: 50px;
-  width: 50px;
-  background-color: black;
+  right: 25px;
+  top: 25px;
+  background: none;
   border: none;
-  z-index: 10; }
+  transition-delay: 0.3s; }
+  .nav-trigger .fa, .nav-trigger-close .fa {
+    font-size: 45px;
+    width: 45px; }
 
 .nav-trigger-close {
   display: none; }
-  .nav-trigger-close.active {
-    display: block; }
+
+button {
+  position: absolute;
+  z-index: 30; }
+  button .fa {
+    color: #66FCF1; }
+  button:active {
+    transition: all 0s linear 0.5s; }
 
 body, html {
   height: 100%;
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  position: relative;
+  z-index: 0;
+  overflow: hidden; }
 
 main {
-  background-color: #333;
+  background-color: #0B0C10;
   display: flex;
   justify-content: space-around;
   align-content: center;
   height: 100vh; }
 
 section {
-  font-size: 14px;
-  color: #AAA;
   align-self: center; }
 
 .sect-main {
-  width: 35.71429rem; }
+  width: 30%; }
+
+.pageCover {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  /*display:none;*/
+  position: absolute;
+  z-index: 20;
+  transition: background 0.3s linear; }
+  .pageCover.active {
+    background-color: rgba(0, 0, 0, 0.7); }
 
 .nav {
-  font-size: 16px;
-  color: #AAA;
-  float: right;
   height: 100vh;
-  background-color: #2B2B2B;
+  /*background: linear-gradient(to right, #2F3843 5%, $panel--color 95%);*/
+  background-color: #1F2833;
   box-sizing: border-box;
-  display: none;
-  box-shadow: -2px 0px 3px #191919; }
+  box-shadow: -10px 0px 15px #050505;
+  flex-direction: column;
+  width: 0px;
+  right: 0px;
+  display: flex;
+  /*border-left: 1px solid $regular-text--color;*/
+  position: absolute;
+  z-index: 100;
+  transition: all 0.5s; }
   .nav.active {
-    display: flex; }
-  .nav .nav__container {
-    width: 14.28571rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-    .nav .nav__container ul {
-      width: 100%;
-      padding-left: 0; }
-      .nav .nav__container ul li {
-        list-style: none;
+    width: 20%; }
+  .nav .nav__container {
+    margin: auto;
+    width: 100%;
+    padding-left: 0; }
+    .nav .nav__container li {
+      list-style: none;
+      font-size: 22px;
+      line-height: 2.5;
+      padding-left: 3.125rem;
+      font-weight: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+      text-transform: uppercase;
+      /*&::after {
+                content: " ";
+                height: 50%;
+                width: 0%;
+                background:  $average-hover--color;
+                @include floating(9.8);
+                right: 0px;
+                bottom: 0px;
+                transition: width 0.2s linear;
+            }*/ }
+      .nav .nav__container li span {
+        z-index: 99;
+        color: #1F2833;
         font-size: 22px;
-        line-height: 2.5;
-        padding-left: 2.14286rem; }
-        .nav .nav__container ul li:hover {
-          background-color: #252525;
-          cursor: pointer; }
+        /*padding-left: rem(50);
+                margin-left: rem(-50);*/
+        padding-left: 3.125rem;
+        font-weight: 900;
+        overflow: hidden;
+        width: 0%;
+        transition: all 0.2s cubic-bezier(0.23, 0.05, 0.55, 0.95);
+        /*cubic-bezier(0.42, 0, 0, 1);*/
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        margin: auto;
+        top: 0px; }
+      .nav .nav__container li::before {
+        content: " ";
+        border-radius: 50px;
+        height: 10%;
+        width: 2%;
+        background: #45A29E;
+        position: absolute;
+        z-index: 99;
+        left: -1%;
+        transition: all 0.2s cubic-bezier(0.23, 0.05, 0.55, 0.95), height 0.16s 0.04s linear; }
+      .nav .nav__container li:hover {
+        /*&:before{
+                    transition: height 0.2s linear;
+                }*/ }
+        .nav .nav__container li:hover span {
+          display: block; }
+        .nav .nav__container li:hover:before {
+          left: 0px; }
+        .nav .nav__container li:hover:before, .nav .nav__container li:hover span {
+          width: 100%;
+          height: 100%; }
+
+html * {
+  box-sizing: border-box;
+  color: #C5C6C7;
+  font-family: "Open Sans", "Helvetica";
+  font-size: 16px; }
+
+li:hover, button:hover {
+  cursor: pointer; }
+
+.active {
+  display: block; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=maps/Proccessed.css.map */

@@ -2,11 +2,13 @@
     height: 100%;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    position:relative;
+    z-index:0;
+    overflow:hidden;
 }
 
 main {
-    background-color: #333;
+    background-color: $background--color;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -14,10 +16,22 @@ main {
 }
 
 section {
-    @include font-size--standart;
     align-self: center;
 }
 
 .sect-main {
-    width: rem(500);
+    width: 30%;
+}
+
+.pageCover{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    /*display:none;*/
+    @include floating(2);
+    transition: background 0.3s linear;
+
+    &.active{
+        background-color: rgba(0,0,0,0.7);
+    }
 }

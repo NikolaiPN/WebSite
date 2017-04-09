@@ -9,31 +9,32 @@
     <meta name="viewport" content="width=device-width" />
     <title>Nikolay Nikolov</title>
     <link href="~/Web/Content/Styles/Proccessed.css" rel="stylesheet" />
+    <link href="~/Web/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <script src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous">
-
     </script>
 </head>
 <body>
-    <button class="btn nav-trigger"></button>
+    <button class="nav-trigger">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
     <navigation class="nav">
-        <div class="nav__container">
-            <button class="btn nav-trigger-close"></button>
-            <ul>
-                <li>About</li>
-                <li>Skills</li>
-                <li>Projects</li>
-                <li>Contacts</li>
-            </ul>
-        </div>
+        <ul class="nav__container">
+            <li class="navBtn"> About    <span>About   </span></li>
+            <li class="navBtn"> Skills   <span>Skills  </span></li>
+            <li class="navBtn"> Projects <span>Projects</span></li>
+            <li class="navBtn"> Contacts <span>Contacts</span></li>
+        </ul>
     </navigation>
-    <main>
-        <section class="sect-main">
-            <p>Hello, my name is Nikolay Nikolov.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </section>
-    </main>
+    <div class="pageCover"></div>
+        <main>
+            <section class="sect-main">
+                <p>Hello, my name is Nikolay Nikolov.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+        </main>
 </body>
 </html>
 <script>
@@ -41,16 +42,31 @@
 
     });
 
+    var body = $('body');
     var navTrigger = $('.nav-trigger');
-    var navTriggerClose = $('.nav-trigger-close');
     var nav = $('.nav');
+    var cover = $('.pageCover');
+    var navBtn = $('.navBtn');
 
-    navTrigger.on('click', toggleActive);
-    navTriggerClose.on('click', toggleActive);
+    navTrigger.click(function () {
+        navTrigger.addClass('active');
+        nav.addClass('active');
+        cover.addClass('active');
 
-    function toggleActive() {
-        navTrigger.toggleClass('active');
-        nav.toggleClass('active');
-        navTriggerClose.toggleClass('active');
-    }
+    });
+
+    cover.click(function () {
+            navTrigger.removeClass('active');
+            nav.removeClass('active');
+            cover.removeClass('active');
+    });
+
+    var mousePosition = { x: -1, y: -1 };
+
+    navBtn.mousemove(function (e) {
+        mousePosition.x = e.pageX;
+        mousePosition.y = e.pageY;
+    });
+
+
 </script>

@@ -1,5 +1,69 @@
-﻿@function rem( $pixels, $base: $rem-Fn-base ){
-    $result: ($pixels / $base) * 1rem;
+﻿@function createHoverColorByTemplate($color, $temp1: $color-hoverDifference-original, $temp2: $color-hoverDifference-hovered) {
+    $hue: hue($color);
+    $saturationDifference: 0% !default;
+    $lightnessDifference: 0% !default;
 
-    @return $result;
+    @if(saturation($temp1) >= saturation($temp2)) {
+        $saturationDifference: saturation($temp1) - saturation($temp2);
+    }
+    @else {
+        $saturationDifference: saturation($temp2) - saturation($temp1);
+    }
+
+
+    @if(lightness($temp1) >= lightness($temp2)) {
+        $lightnessDifference: lightness($temp1) - lightness($temp2);
+    }
+    @else {
+        $lightnessDifference: lightness($temp2) - lightness($temp1);
+    }
+
+    $resSaturation: saturation($color) - $saturationDifference;
+    $resLightness: lightness($color) - $lightnessDifference;
+
+    $darkerColor: hsl($hue, $resSaturation, $resLightness);
+
+    @return $darkerColor;
+}
+
+@function changeColorSaturation($color, $value) {
+
+    $saturation: saturation($color);
+
+    $newSaturation: $saturation + $value;
+
+    @if ($newSaturation > 100) {
+        $newSaturation: 100;
+    }
+    @else if ($newSaturation < 0) {
+        $newSaturation: 0;
+    }
+
+    $newColor: hsl(hue($color), $newSaturation, lightness($color));
+
+    @return $newColor;
+}
+
+@function check($value1) {
+    @if($value1 == 1) {
+        @return 1;
+    }
+    @else if($value1 == 2) {
+        @return 2;
+    }
+    @else {
+        @return $value1 + 0px;
+    }
+}
+
+@function rem($pixels, $ratio: $browser-context){
+    $rem: $pixels / ($ratio / 1px);
+
+    @return $rem * 1rem;
+}
+
+@function remToPixel($rems, $ratio: $browser-context){
+    $pixels: $rems * $ratio;
+
+    @return $pixels * 1px;
 }

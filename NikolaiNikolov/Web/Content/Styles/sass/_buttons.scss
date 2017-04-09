@@ -1,27 +1,32 @@
 ﻿.nav-trigger {
     position: fixed;
-    right: rem(20);
-    top: rem(20);
-
-    &.active {
-        display: none;
-    }
-}
-
-.btn {
-    height: 50px;
-    width: 50px;
-    background-color: black;
+    right: 25px;
+    top: 25px;
+    background: none;
     border: none;
-    z-index: 10;
+    transition-delay: 0.3s;
+
+
+    .fa {
+        font-size: 45px;
+        width: 45px;
+    }
 }
 
 .nav-trigger-close {
     display: none;
 
     @extend .nav-trigger;
+}
 
-    &.active{
-        display: block;
+button {
+    @include floating(3);
+
+    .fa {
+        color: $main-buttons--color;
+    }
+
+    &:active{
+        transition: all 0s linear 0.5s;
     }
 }
